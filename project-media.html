@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media | Anh Thư Portfolio</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/portfolio-custom.css">
+<link rel="stylesheet" href="css/local-fonts.css">
+
+<style>
+:root {
+    --paper: #f5f0df;
+    --ink: #192d4d;
+    --orange: #e85d3f;
+    --muted: #77766e;
+    --line: rgba(25,45,77,.16);
+    --page-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Portfolio Sans", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(var(--page-width), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.project-nav {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    transition: box-shadow .3s ease;
+}
+
+.project-nav.scrolled {
+    box-shadow: 0 8px 28px rgba(30,25,20,.09);
+}
+
+.nav-inner {
+    width: min(1320px, calc(100% - 48px));
+    min-height: 76px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.brand span {
+    color: var(--orange);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color .25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+/* MARQUEE */
+
+.marquee {
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 15px 0;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.marquee span {
+    padding-right: 45px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.marquee b {
+    color: var(--orange);
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* PROJECT SECTION */
+
+.gallery-section {
+    padding: 75px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.section-number {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* PROJECT SELECTOR */
+
+.project-selector {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.project-choice {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.2);
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.project-choice:hover,
+.project-choice.active {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.project-cover {
+    height: 210px;
+    overflow: hidden;
+    background: #e8dfcc;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.project-choice:hover .project-cover img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 17px;
+}
+
+.project-info small {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.project-info h3 {
+    margin: 8px 0;
+    font-size: 17px;
+}
+
+.project-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.project-select-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* PROJECT GALLERY */
+
+.project-gallery {
+    display: none;
+    margin-top: 55px;
+    animation: galleryIn .4s ease;
+}
+
+.project-gallery.active {
+    display: block;
+}
+
+@keyframes galleryIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--line);
+}
+
+.gallery-top small {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.back-projects {
+    border: 1px solid var(--line);
+    padding: 10px 15px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.back-projects:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+.project-photo-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.project-photo {
+    display: block;
+    height: 250px;
+    overflow: hidden;
+    background: #e8dfcc;
+    cursor: zoom-in;
+}
+
+.project-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .5s ease;
+}
+
+.project-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 75px;
+    background: rgba(10,18,30,.95);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 15px 50px rgba(0,0,0,.3);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.1);
+    color: white;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.lightbox-close {
+    top: 22px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 27px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.lightbox-prev {
+    left: 22px;
+}
+
+.lightbox-next {
+    right: 22px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 10px 17px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .project-selector {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-photo-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .container,
+    .nav-inner {
+        width: calc(100% - 32px);
+    }
+
+    .gallery-section {
+        padding: 45px 0;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .project-selector {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .project-cover {
+        height: 220px;
+    }
+
+    .project-gallery {
+        margin-top: 38px;
+    }
+
+    .gallery-top {
+        align-items: flex-start;
+    }
+
+    .back-projects {
+        padding: 9px;
+        font-size: 10px;
+    }
+
+    .project-photo-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .project-photo {
+        height: 170px;
+    }
+
+    .lightbox {
+        padding: 55px 45px;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+    .project-photo {
+        height: 145px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="project-nav" id="top">
+    <div class="nav-inner">
+
+        <a class="brand" href="index.html#home">
+            ANH THƯ <span>PORTFOLIO</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Điều hướng chính">
+            <a href="index.html#home">Trang chủ</a>
+            <a href="index.html#about">Giới thiệu</a>
+            <a href="index.html#experience">Kinh nghiệm</a>
+            <a href="index.html#projects">Dự án</a>
+            <a href="index.html#education">Học vấn</a>
+            <a href="index.html#contact">Liên hệ</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- MARQUEE -->
+
+<div class="marquee">
+    <div class="marquee-track">
+        <span>
+            DESIGN <b>✳</b>
+            CONTENT <b>✳</b>
+            PHOTOGRAPHY <b>✳</b>
+            VIDEO EDITING <b>✳</b>
+        </span>
+        <span>
+            DESIGN <b>✳</b>
+            CONTENT <b>✳</b>
+            PHOTOGRAPHY <b>✳</b>
+            VIDEO EDITING <b>✳</b>
+        </span>
+    </div>
+</div>
+
+<!-- DESIGN PROJECTS -->
+
+<section class="gallery-section" id="fits-got-talent">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="section-number">1/ DESIGN</div>
+        </div>
+
+        <!-- PROJECT SELECTOR -->
+
+        <div class="project-selector reveal">
+
+            <button class="project-choice" data-project="project-01">
+                <div class="project-cover">
+                    <img src="img/pts/FIT'S/back1.png" alt="FIT'S GOT TALENT 2025">
+                </div>
+                <div class="project-info">
+                    <h3>FIT'S GOT TALENT 2025</h3>
+                    <div class="project-select-label">
+                        <span>XEM DỰ ÁN</span>
+                        <span>↗</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="project-choice" data-project="project-02">
+                <div class="project-cover">
+                    <img src="img/pts/TUYENSINH/Standee.jpg" alt="Tuyển sinh khoa CNTT và Điện 2025">
+                </div>
+                <div class="project-info">
+                    <h3>TUYỂN SINH KHOA CNTT & ĐIỆN 2025</h3>
+                    <div class="project-select-label">
+                        <span>XEM DỰ ÁN</span>
+                        <span>↗</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="project-choice" data-project="project-03">
+                <div class="project-cover">
+                    <img src="img/pts/JOB/vana.jpg" alt="Thiết kế Freelance">
+                </div>
+                <div class="project-info">
+                    <h3>FREELANCE</h3>
+                    <div class="project-select-label">
+                        <span>XEM DỰ ÁN</span>
+                        <span>↗</span>
+                    </div>
+                </div>
+            </button>
+
+        </div>
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-gallery" id="project-01">
+
+            <div class="gallery-top">
+                <div>
+                    <small>a/ FIT'S GOT TALENT</small>
+                </div>
+                <button class="back-projects">
+                    ← XEM THÊM SẢN PHẨM KHÁC
+                </button>
+            </div>
+
+            <div class="project-photo-board">
+
+                <a class="project-photo" href="img/pts/FIT'S/nhãn nước.png">
+                    <img src="img/pts/FIT'S/nhãn nước.png" alt="Nhãn chai nước">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/BACKDROP.png">
+                    <img src="img/pts/FIT'S/BACKDROP.png" alt="Backdrop">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/back1.png">
+                    <img src="img/pts/FIT'S/back1.png" alt="Background 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/back2.png">
+                    <img src="img/pts/FIT'S/back2.png" alt="Background 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/social1.png">
+                    <img src="img/pts/FIT'S/social1.png" alt="Social 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/social2.png">
+                    <img src="img/pts/FIT'S/social2.png" alt="Social 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/FIT'S/social3.png">
+                    <img src="img/pts/FIT'S/social3.png" alt="Social 03">
+                </a>
+
+            </div>
+        </div>
+
+        <!-- PROJECT 02 -->
+
+        <div class="project-gallery" id="project-02">
+
+            <div class="gallery-top">
+                <div>
+                    <small>b/ TUYỂN SINH KHOA CNTT & ĐIỆN 2025</small>
+                </div>
+                <button class="back-projects">
+                    ← XEM THÊM SẢN PHẨM KHÁC
+                </button>
+            </div>
+
+            <div class="project-photo-board">
+
+                <a class="project-photo" href="img/pts/TUYENSINH/Standee.jpg">
+                    <img src="img/pts/TUYENSINH/Standee.jpg" alt="Standee">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/1.jpg">
+                    <img src="img/pts/TUYENSINH/1.jpg" alt="Thiết kế 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/2.jpg">
+                    <img src="img/pts/TUYENSINH/2.jpg" alt="Thiết kế 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/3.jpg">
+                    <img src="img/pts/TUYENSINH/3.jpg" alt="Thiết kế 03">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/4.jpg">
+                    <img src="img/pts/TUYENSINH/4.jpg" alt="Thiết kế 04">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/5.jpg">
+                    <img src="img/pts/TUYENSINH/5.jpg" alt="Thiết kế 05">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/dientu1.jpg">
+                    <img src="img/pts/TUYENSINH/dientu1.jpg" alt="Thiết kế ngành Điện 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/dientu2.jpg">
+                    <img src="img/pts/TUYENSINH/dientu2.jpg" alt="Thiết kế ngành Điện 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/cntt2025_1.jpg">
+                    <img src="img/pts/TUYENSINH/cntt2025_1.jpg" alt="Thiết kế CNTT 2025 - 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/cntt2025_2.jpg">
+                    <img src="img/pts/TUYENSINH/cntt2025_2.jpg" alt="Thiết kế CNTT 2025 - 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/cntt2024_1.jpg">
+                    <img src="img/pts/TUYENSINH/cntt2024_1.jpg" alt="Thiết kế CNTT 2024 - 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/TUYENSINH/cntt2024_2.jpg">
+                    <img src="img/pts/TUYENSINH/cntt2024_2.jpg" alt="Thiết kế CNTT 2024 - 02">
+                </a>
+
+            </div>
+        </div>
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-gallery" id="project-03">
+
+            <div class="gallery-top">
+                <div>
+                    <small>c/ FREELANCE</small>
+                </div>
+                <button class="back-projects">
+                    ← XEM THÊM SẢN PHẨM KHÁC
+                </button>
+            </div>
+
+            <div class="project-photo-board">
+
+                <a class="project-photo" href="img/pts/JOB/vana.jpg">
+                    <img src="img/pts/JOB/vana.jpg" alt="Thiết kế Vana">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/rio1.png">
+                    <img src="img/pts/JOB/rio1.png" alt="Thiết kế Rio 01">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/rio2.png">
+                    <img src="img/pts/JOB/rio2.png" alt="Thiết kế Rio 02">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/rio3.png">
+                    <img src="img/pts/JOB/rio3.png" alt="Thiết kế Rio 03">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/rio4.png">
+                    <img src="img/pts/JOB/rio4.png" alt="Thiết kế Rio 04">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/HALLO.png">
+                    <img src="img/pts/JOB/HALLO.png" alt="Thiết kế Hallo">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/HALLO_PT.png">
+                    <img src="img/pts/JOB/HALLO_PT.png" alt="Thiết kế Hallo PT">
+                </a>
+
+                <a class="project-photo" href="img/pts/JOB/MILYNAP.png">
+                    <img src="img/pts/JOB/MILYNAP.png" alt="Thiết kế Milynap">
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">
+        ×
+    </button>
+
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">
+        ‹
+    </button>
+
+    <img class="lightbox-image"
+         id="lightboxImage"
+         src=""
+         alt="Ảnh xem trước">
+
+    <button class="lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp theo">
+        ›
+    </button>
+
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+
+</div>
+
+<script>
+
+/* NAVIGATION */
+
+const nav = document.querySelector('.project-nav');
+
+function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+
+/* REVEAL ANIMATION */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(item => {
+    observer.observe(item);
+});
+
+
+/* PROJECT SELECTOR */
+
+const projectButtons = document.querySelectorAll('.project-choice');
+const projectGalleries = document.querySelectorAll('.project-gallery');
+
+function showProject(projectId) {
+
+    projectGalleries.forEach(gallery => {
+        gallery.classList.remove('active');
+    });
+
+    projectButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const selectedGallery = document.getElementById(projectId);
+
+    const selectedButton = document.querySelector(
+        `[data-project="${projectId}"]`
+    );
+
+    if (!selectedGallery || !selectedButton) return;
+
+    selectedGallery.classList.add('active');
+    selectedButton.classList.add('active');
+
+    selectedGallery.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+projectButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+        showProject(button.dataset.project);
+    });
+
+});
+
+
+/* BACK TO PROJECTS */
+
+document.querySelectorAll('.back-projects').forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        projectGalleries.forEach(gallery => {
+            gallery.classList.remove('active');
+        });
+
+        projectButtons.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        document.getElementById('fits-got-talent')
+            .scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+    });
+
+});
+
+
+/* LIGHTBOX */
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(images, index) {
+
+    currentImages = images;
+    currentIndex = index;
+
+    updateLightbox();
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+}
+
+function updateLightbox() {
+
+    const selected = currentImages[currentIndex];
+
+    lightboxImage.src = selected.href;
+
+    lightboxImage.alt =
+        selected.querySelector('img')?.alt || 'Ảnh xem trước';
+
+    lightboxCounter.textContent =
+        `${currentIndex + 1} / ${currentImages.length}`;
+
+}
+
+function nextImage() {
+
+    if (!currentImages.length) return;
+
+    currentIndex =
+        (currentIndex + 1) % currentImages.length;
+
+    updateLightbox();
+
+}
+
+function prevImage() {
+
+    if (!currentImages.length) return;
+
+    currentIndex =
+        (currentIndex - 1 + currentImages.length)
+        % currentImages.length;
+
+    updateLightbox();
+
+}
+
+function closeLightbox() {
+
+    lightbox.classList.remove('active');
+
+    lightboxImage.src = '';
+
+    document.body.style.overflow = '';
+
+    currentImages = [];
+    currentIndex = 0;
+
+}
+
+
+/* IMAGE CLICK EVENTS */
+
+document.querySelectorAll('.project-gallery').forEach(gallery => {
+
+    const images = [
+        ...gallery.querySelectorAll('.project-photo')
+    ];
+
+    images.forEach((item, index) => {
+
+        item.addEventListener('click', event => {
+
+            event.preventDefault();
+
+            openLightbox(images, index);
+
+        });
+
+    });
+
+});
+
+
+/* LIGHTBOX CONTROLS */
+
+lightboxNext.addEventListener('click', nextImage);
+lightboxPrev.addEventListener('click', prevImage);
+lightboxClose.addEventListener('click', closeLightbox);
+
+lightbox.addEventListener('click', event => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+/* KEYBOARD CONTROLS */
+
+document.addEventListener('keydown', event => {
+
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') closeLightbox();
+
+    if (event.key === 'ArrowRight') nextImage();
+
+    if (event.key === 'ArrowLeft') prevImage();
+
+});
+
+</script>
+
+</body>
+</html>

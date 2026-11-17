@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Portfolio | Anh Thư">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/local-fonts.css" rel="stylesheet">
+  <link href="css/portfolio-custom.css" rel="stylesheet"> 
+ <link rel="stylesheet" href="css/thvl.css">
+</head>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+    <h1><a class="brand" href="index.html#home">ANH THƯ<span> PORTFOLIO</span></a></h1>
+      <nav aria-label="Điều hướng chính">
+        <a href="index.html#home">Trang chủ</a>
+        <a href="index.html#about">Giới thiệu</a>
+        <a href="index.html#experience">Kinh nghiệm</a>
+        <a href="index.html#projects">Dự án</a>
+        <a href="index.html#education">Học vấn</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+<body>
+
+<div id="thvlLightbox" class="thvl-lightbox" aria-hidden="true">
+  <button class="thvl-close" type="button">&times; Đóng</button>
+  <h3 id="thvlLightboxCaption"></h3>
+  <iframe id="thvlLightboxPDF" title="Tài liệu dự án"></iframe>
+</div>
+
+<div class="thvl-photo-board" id="thvlPhotoBoard" aria-hidden="true">
+  <div class="thvl-photo-board-box">
+    <button class="thvl-photo-board-close" type="button">&times;</button>
+
+     <p class="thvl-picker-label">HÌNH ẢNH TÁC NGHIỆP</p>
+    <h3>QUAY PHÓNG SỰ &amp; CHƯƠNG TRÌNH</h3>
+    <p class="thvl-photo-board-desc">Một số hình ảnh trong quá trình ghi hình và sản xuất.</p>
+    <div class="thvl-photo-grid">
+<img src="img/THVL/1.jpg">
+<img src="img/THVL/2.png">
+<img src="img/THVL/3.png">
+<img src="img/THVL/4.jpg">
+<img src="img/THVL/5.jpg">
+<img src="img/THVL/6.jpg">
+<img src="img/THVL/7.jpg">
+<img src="img/THVL/8.jpg">
+<img src="img/THVL/9.png">
+<img src="img/THVL/10.png">
+<img src="img/THVL/11.png">
+<img src="img/THVL/12.png">
+    </div>
+  </div>
+</div>
+
+<div class="thvl-photo-board" id="thvlVideoBoard" aria-hidden="true">
+  <div class="thvl-photo-board-box thvl-video-board-box">
+
+    <button class="thvl-video-board-close thvl-photo-board-close"
+            type="button" aria-label="Đóng">&times;</button>
+
+    <p class="thvl-picker-label">HẬU KỲ TRUYỀN HÌNH</p>
+    <h3>DỰNG VÀ CHỌN LỌC CLIP</h3>
+    <p class="thvl-photo-board-desc">
+      Một số video và hình ảnh trong quá trình biên tập, dựng chương trình.
+    </p>
+
+    <div class="thvl-video-grid">
+
+
+<div class="thvl-video-item">
+  <button class="thvl-video-thumb" type="button"
+          data-video="img/13.mp4" aria-label="Phát video 01">
+    <img src="img/THVL/13b.png">
+    <span class="thvl-play-icon">▶</span>
+  </button>
+</div>
+
+<div class="thvl-video-item">
+  <button class="thvl-video-thumb" type="button"
+          data-video="img/14.mp4" aria-label="Phát video 02">
+    <img src="img/THVL/14b.png">
+    <span class="thvl-play-icon">▶</span>
+  </button>
+  </div>
+
+<div class="thvl-video-item">
+  <button class="thvl-video-thumb" type="button"
+          data-video="img/tt1.mp4"
+          aria-label="Phát video 03">
+    <img src="img/THVL/tt1a.jpg" alt="Video hậu kỳ 03">
+    <span class="thvl-play-icon">▶</span>
+  </button>
+</div>
+
+<div class="thvl-video-item">
+  <button class="thvl-video-thumb" type="button"
+          data-video="img/tt2.mp4"
+          aria-label="Phát video 04">
+    <img src="img/THVL/tt2a.jpg" alt="Video hậu kỳ 04">
+    <span class="thvl-play-icon">▶</span>
+  </button>
+</div>
+      <div class="thvl-video-item">
+        <img src="img/THVL/page tt.png" alt="Hình ảnh ">
+            </div>
+      <div class="thvl-video-item">
+              <img src="img/THVL/cx.png" alt="Hình ảnh">
+                  </div>
+      <div class="thvl-video-item">
+        <img src="img/THVL/16.png" alt="Hình ảnh">
+            </div>
+      <div class="thvl-video-item">
+        <img src="img/THVL/17.png" alt="Hình ảnh">
+             </div>
+    </div>
+  </div>
+</div>
+
+<div class="thvl-video-player" id="thvlVideoPlayer" aria-hidden="true">
+  <div class="thvl-video-player-box">
+    <button
+      type="button"
+      id="thvlVideoPlayerClose"
+      class="thvl-video-player-close"
+      aria-label="Đóng"
+    >&times;</button>
+    <video
+      id="thvlVideoPlayerElement"
+      controls
+      playsinline
+      preload="metadata"
+    ></video>
+  </div>
+</div>
+
+<div class="thvl-photo-viewer" id="thvlPhotoViewer" aria-hidden="true">
+  <button type="button" class="thvl-photo-viewer-close">&times;</button>
+  <button type="button" class="thvl-photo-prev" aria-label="Ảnh trước">&#10094;</button>
+  <img id="thvlPhotoViewerImage" src="" alt="Ảnh hậu trường phóng lớn">
+  <button type="button" class="thvl-photo-next" aria-label="Ảnh tiếp theo">&#10095;</button>
+</div>
+<div class="thvl-picker" id="thvlPicker" aria-hidden="true">
+  <div class="thvl-picker-box">
+    <button class="thvl-picker-close" type="button">&times;</button>
+    <span class="thvl-picker-label">TÀI LIỆU DỰ ÁN</span>
+    <h3 id="thvlPickerTitle">Báo cáo khảo sát</h3>
+    <p>Chọn tài liệu bạn muốn xem</p>
+
+    <button class="thvl-file-option" type="button"
+      data-group="khaosat"
+      data-pdf="documents/khaosat/BCKS TSNT - Nguyễn Đăng Khoa.pdf"
+      data-caption="Báo cáo khảo sát — Nguyễn Đăng Khoa">
+      <span>01</span>
+      <span>Nguyễn Đăng Khoa</span>
+      <span>↗</span>
+    </button>
+    <button class="thvl-file-option" type="button"
+      data-group="khaosat"
+      data-pdf="documents/khaosat/BCKS TSNT - Đặng Hiếu Nghĩa.pdf"
+      data-caption="Báo cáo khảo sát — Đặng Hiếu Nghĩa">
+      <span>02</span>
+      <span>Đặng Hiếu Nghĩa</span>
+      <span>↗</span>
+    </button>
+
+    <button class="thvl-file-option" type="button"
+      data-group="kichban"
+      data-pdf="documents/kichban/KB TIỀN KỲ TSNT - Nguyễn Đăng Khoa.pdf"
+      data-caption="Kịch bản tiền kỳ — Nguyễn Đăng Khoa">
+      <span>01</span>
+      <span>Nguyễn Đăng Khoa</span>
+      <span>↗</span>
+    </button>
+    <button class="thvl-file-option" type="button"
+      data-group="kichban"
+      data-pdf="documents/kichban/KB TIỀN KỲ TSNT - Đặng Hiếu Nghĩa.pdf"
+      data-caption="Kịch bản tiền kỳ — Đặng Hiếu Nghĩa">
+      <span>02</span>
+      <span>Đặng Hiếu Nghĩa</span>
+      <span>↗</span>
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const picker = document.getElementById('thvlPicker');
+  const lightbox = document.getElementById('thvlLightbox');
+  const pdfFrame = document.getElementById('thvlLightboxPDF');
+  const caption = document.getElementById('thvlLightboxCaption');
+  const pickerTitle = document.getElementById('thvlPickerTitle');
+  const photoBoard = document.getElementById('thvlPhotoBoard');
+  const photoViewer = document.getElementById('thvlPhotoViewer');
+  const viewerImage = document.getElementById('thvlPhotoViewerImage');
+  const photoImages = Array.from(
+    document.querySelectorAll('.thvl-photo-grid img')
+  );
+  let currentPhotoIndex = 0;
+  document.querySelectorAll('.thvl-open[data-group]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const group = button.dataset.group;
+
+      pickerTitle.textContent =
+        group === 'khaosat'
+          ? 'Báo cáo khảo sát'
+          : 'Kịch bản tiền kỳ TSNT';
+
+      picker.querySelectorAll('.thvl-file-option').forEach(function (item) {
+        item.style.display =
+          item.dataset.group === group ? 'grid' : 'none';
+      });
+
+      picker.classList.add('active');
+      picker.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  picker.querySelectorAll('.thvl-file-option[data-pdf]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      pdfFrame.src = encodeURI(button.dataset.pdf) + '#toolbar=0&navpanes=0';
+      caption.textContent = button.dataset.caption || 'Tài liệu dự án';
+
+      picker.classList.remove('active');
+      picker.setAttribute('aria-hidden', 'true');
+
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  const videoBoard = document.getElementById('thvlVideoBoard');
+  // PHÁT VIDEO KHI BẤM VÀO Ô
+const videoPlayer = document.getElementById('thvlVideoPlayer');
+const player = document.getElementById('thvlVideoPlayerElement');
+const playerClose = document.getElementById('thvlVideoPlayerClose');
+
+document.querySelectorAll('.thvl-video-thumb').forEach(function (button) {
+  button.addEventListener('click', function () {
+    const videoSrc = button.dataset.video;
+    if (!videoSrc) return;
+    player.pause();
+    player.src = videoSrc;
+    player.load();
+    videoPlayer.classList.add('active');
+    videoPlayer.setAttribute('aria-hidden', 'false');
+    player.play().catch(function (error) {
+      console.error('Không phát tự động được video:', error);
+    });
+  });
+});
+
+function closeVideoPlayer() {
+  player.pause();
+  player.removeAttribute('src');
+  player.load();
+  videoPlayer.classList.remove('active');
+  videoPlayer.setAttribute('aria-hidden', 'true');
+}
+
+playerClose.addEventListener('click', closeVideoPlayer);
+videoPlayer.addEventListener('click', function (event) {
+  if (event.target === videoPlayer) {
+    closeVideoPlayer();
+  }
+});
+  document.querySelectorAll('.thvl-video-gallery-open').forEach(function (button) {
+    button.addEventListener('click', function () {
+      videoBoard.classList.add('active');
+      videoBoard.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  videoBoard.querySelector('.thvl-video-board-close')
+    .addEventListener('click', function () {
+      videoBoard.classList.remove('active');
+      videoBoard.setAttribute('aria-hidden', 'true');
+    });
+
+  videoBoard.addEventListener('click', function (event) {
+    if (event.target === videoBoard) {
+      videoBoard.classList.remove('active');
+      videoBoard.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  document.querySelectorAll('.thvl-gallery-open').forEach(function (button) {
+    button.addEventListener('click', function () {
+      photoBoard.classList.add('active');
+      photoBoard.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  document.querySelector('.thvl-photo-board-close')
+    .addEventListener('click', function () {
+      photoBoard.classList.remove('active');
+      photoBoard.setAttribute('aria-hidden', 'true');
+    });
+
+  photoBoard.addEventListener('click', function (event) {
+    if (event.target === photoBoard) {
+      photoBoard.classList.remove('active');
+      photoBoard.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  function showPhoto() {
+    if (!photoImages.length) return;
+
+    viewerImage.src = photoImages[currentPhotoIndex].src;
+    viewerImage.alt = photoImages[currentPhotoIndex].alt;
+
+    photoViewer.classList.add('active');
+    photoViewer.setAttribute('aria-hidden', 'false');
+  }
+
+  photoImages.forEach(function (img, index) {
+    img.addEventListener('click', function () {
+      currentPhotoIndex = index;
+      showPhoto();
+    });
+  });
+
+  document.querySelector('.thvl-photo-prev').addEventListener('click', function () {
+    if (!photoImages.length) return;
+    currentPhotoIndex =
+      (currentPhotoIndex - 1 + photoImages.length) % photoImages.length;
+    showPhoto();
+  });
+
+  document.querySelector('.thvl-photo-next').addEventListener('click', function () {
+    if (!photoImages.length) return;
+    currentPhotoIndex = (currentPhotoIndex + 1) % photoImages.length;
+    showPhoto();
+  });
+
+  function closePhotoViewer() {
+    photoViewer.classList.remove('active');
+    photoViewer.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelector('.thvl-photo-viewer-close')
+    .addEventListener('click', closePhotoViewer);
+
+  function closePicker() {
+    picker.classList.remove('active');
+    picker.setAttribute('aria-hidden', 'true');
+  }
+
+  function closePDF() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    pdfFrame.src = '';
+  }
+
+  picker.querySelector('.thvl-picker-close')
+    .addEventListener('click', closePicker);
+
+  picker.addEventListener('click', function (event) {
+    if (event.target === picker) closePicker();
+  });
+
+  lightbox.querySelector('.thvl-close')
+    .addEventListener('click', closePDF);
+
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) closePDF();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closePicker();
+      closePDF();
+      closePhotoViewer();
+
+      photoBoard.classList.remove('active');
+      photoBoard.setAttribute('aria-hidden', 'true');
+    }
+  });
+});
+</script>
+
+<main class="thvl-page">
+
+  <!-- GIỚI THIỆU DỰ ÁN -->
+  <section class="thvl-hero">
+    <div class="thvl-hero-content">
+
+      <h1>SẢN XUẤT CHƯƠNG TRÌNH<br>TRUYỀN HÌNH</h1>
+
+      <p class="thvl-unit">
+        BÁO VÀ ĐÀI PHÁT THANH, TRUYỀN HÌNH VĨNH LONG
+      </p>
+
+      <div class="thvl-divider"></div>
+
+      <p class="thvl-role">Vị trí: Thực tập sinh Biên tập viên</p>
+    </div>
+
+    <div class="thvl-year">2023 — 2025</div>
+  </section>
+
+  <!-- CÁC HẠNG MỤC CÔNG VIỆC -->
+  <section class="thvl-section">
+    <div class="thvl-work-grid">
+<article class="thvl-work-card">
+  <button class="thvl-open" type="button"
+          data-group="khaosat"
+          data-caption="Báo cáo khảo sát">
+    <img src="img/THVL/khaosat.png" alt="Báo cáo khảo sát">
+    <span>01</span>
+    <h3>BÁO CÁO KHẢO SÁT</h3>
+  </button>
+</article>
+      <!-- KỊCH BẢN -->
+<article class="thvl-work-card">
+  <button class="thvl-open" type="button"
+          data-group="kichban"
+          data-caption="Kịch bản chương trình truyền hình">
+    <img src="img/THVL/kichban.png" alt="Kịch bản chương trình truyền hình">
+    <span>02</span>
+    <h3>KỊCH BẢN CHƯƠNG TRÌNH TRUYỀN HÌNH</h3>
+  </button>
+</article>
+
+      <article class="thvl-work-card">
+  <button class="thvl-gallery-open" type="button">
+    <img src="img/THVL/quayphim.png" alt="Quay phóng sự">
+    <span>03</span>
+    <h3>QUAY PHÓNG SỰ &amp; CHƯƠNG TRÌNH</h3>
+    <p>Xem hình ảnh hậu trường</p>
+  </button>
+</article>
+
+<article class="thvl-work-card">
+  <button class="thvl-video-gallery-open" type="button">
+    <img src="img/THVL/video.png" alt="Dựng và chọn lọc clip">
+    <span>04</span>
+    <h3>DỰNG VÀ CHỌN LỌC CLIP</h3>
+    <p>Xem video sản phẩm</p>
+  </button>
+</article>
+    </div>
+  </section>
+
+  <section class="thvl-section thvl-contribution">
+    <h2>CÔNG VIỆC THỰC HIỆN</h2>
+
+    <div class="thvl-contribution-grid">
+      <article>
+        <span class="thvl-number">01 / NỘI DUNG</span>
+        <p>
+          Tìm hiểu đề tài, chuẩn bị thông tin, tham gia viết
+          kịch bản và câu hỏi phỏng vấn.
+        </p>
+      </article>
+      <article>
+        <span class="thvl-number">02 / SẢN XUẤT</span>
+        <p>
+          Phối hợp ghi hình, phỏng vấn nhân vật và
+          tác nghiệp tại hiện trường.
+        </p>
+      </article>
+
+      <article>
+        <span class="thvl-number">03 / HẬU KỲ</span>
+        <p>
+          Dựng thô, chọn lọc tư liệu và hỗ trợ hoàn thiện
+          sản phẩm truyền hình.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="thvl-section thvl-contribution thvl-achievements">
+    <h2>THÀNH TỰU</h2>
+
+    <div class="thvl-contribution-grid">
+      <article>
+        <span class="thvl-number">200+ số phát sóng/05 show</span>
+      </article>
+      <article>
+        <span class="thvl-number">130+ nội dung/2 kênh tiktok</span>
+      </article>
+      <article>
+        <span class="thvl-number">Có bài đăng đạt 83,9K lượt xem.</span>
+      </article>
+    </div>
+  </section>
+</main>
+  <footer class="site-footer">NGUYỄN NGỌC ANH THƯ <span>· PORTFOLIO MEDIA</span></footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/portfolio-effects.js"></script>
+</body>
+
+</html>
